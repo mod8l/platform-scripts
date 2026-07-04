@@ -1,0 +1,25 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "gpu-cluster",
+    "title": "GPU Cluster",
+    "tags": ["gpu", "inference"],
+    "timezone": "utc",
+    "schemaVersion": 36,
+    "refresh": "30s",
+    "panels": [
+      {
+        "id": 1,
+        "title": "GPU Utilization",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "avg by (node, gpu) (avg_over_time(nvidia_gpu_utilization_gpu[5m]))",
+            "legendFormat": "{{ node }} / GPU {{ gpu }}"
+          }
+        ],
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 }
+      }
+    ]
+  }
+}

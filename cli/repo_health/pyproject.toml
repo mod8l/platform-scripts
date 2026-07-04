@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repo_health"
+version = "0.1.0"
+description = "CLI health checker for Git repositories."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.5.0",
+    "shellcheck-py>=0.9.0",
+]
+
+[project.scripts]
+repo-health = "repo_health.check:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["repo_health*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"

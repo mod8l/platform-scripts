@@ -1,0 +1,39 @@
+groups:
+  - name: inference_and_gpu
+    rules:
+      - alert: HighInferenceLatency
+        expr: |
+          histogram_quantile(
+            0.99,
+            sum by (le) (rate(inference_request_duration_seconds_bucket[5m]))
+          ) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "p99 inference latency is above SLO"
+          description: "p99 latency is {{ $value }}s"
+
+      - alert: LowGPUUtilization
+        expr: |
+          avg by (node, gpu) (avg_over_time(nvidia_gpu_utilization_gpu[5m])) < 10
+        for: 15m
+        labels:
+          severity: info
+        annotations:
+          summary: "GPU utilization is low"
+          description: "GPU {{ $labels.gpu }} on {{ $labels.node }} has utilization {{ $value }}%"
+
+      - alert: HighErrorRate
+        expr: |
+          (
+            sum by (service) (rate(inference_request_errors_total[5m]))
+            /
+            sum by (service) (rate(inference_request_total[5m]))
+          ) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High inference error rate"
+          description: "Error rate for {{ $labels.service }} is {{ $value | humanizePercentage }}"

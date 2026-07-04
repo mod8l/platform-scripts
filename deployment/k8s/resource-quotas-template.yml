@@ -1,0 +1,20 @@
+# Template: Namespace-level ResourceQuota for CPU, memory, and GPU limits.
+# Customize the values below for each namespace and apply with:
+#   kubectl apply -f resource-quotas-template.yml -n <namespace>
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: namespace-resource-quota
+  labels:
+    app.kubernetes.io/managed-by: platform-scripts
+spec:
+  hard:
+    requests.cpu: "10"
+    requests.memory: 20Gi
+    limits.cpu: "20"
+    limits.memory: 40Gi
+    requests.nvidia.com/gpu: "2"
+    limits.nvidia.com/gpu: "2"
+    pods: "20"
+    services: "10"
+    persistentvolumeclaims: "5"

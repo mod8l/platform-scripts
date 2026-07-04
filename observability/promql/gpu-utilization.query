@@ -1,0 +1,4 @@
+# Average GPU utilization over the last 5 minutes, grouped by node and GPU.
+avg by (node, gpu) (
+  avg_over_time(nvidia_gpu_utilization_gpu[5m])
+)

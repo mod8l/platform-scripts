@@ -1,0 +1,8 @@
+# p99 inference request latency over the last 5 minutes.
+# SLO: 100ms (0.1s). Alert when this exceeds the SLO.
+histogram_quantile(
+  0.99,
+  sum by (le) (
+    rate(inference_request_duration_seconds_bucket[5m])
+  )
+)
