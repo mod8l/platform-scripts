@@ -6,7 +6,7 @@ I built these scripts to make repetitive platform work faster and safer: cleanin
 
 **Related work:** [`ml-inference-starter`](../ml-inference-starter) for a reference serving stack, [`ml-security-checklist`](../ml-security-checklist) for security and production readiness, and [`engineering-playbook`](../engineering-playbook) for the R&D processes these scripts support.
 
-![Lint & Test](https://github.com/gadsosa/platform-scripts/actions/workflows/lint-and-test.yml/badge.svg)
+![Lint & Test](https://github.com/mod8l/platform-scripts/actions/workflows/lint-and-test.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 > **Maturity:** Incubating. These scripts are reference implementations that have been used in real environments. Review and adapt them to your own infrastructure before production use.
