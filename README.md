@@ -15,13 +15,18 @@ Reusable deployment helpers, cost-optimization scripts, and observability snippe
 | Deployment | [`deployment/k8s/rolling-restart.sh`](deployment/k8s/rolling-restart.sh) | Safe rolling restart of a Deployment |
 | Deployment | [`deployment/k8s/resource-quotas-template.yml`](deployment/k8s/resource-quotas-template.yml) | Namespace resource quota template |
 | Deployment | [`deployment/terraform/gke-gpu-node-pool/`](deployment/terraform/gke-gpu-node-pool/) | GKE GPU (NVIDIA T4) node pool |
+| Deployment | [`deployment/terraform/aws-gpu-node-pool/`](deployment/terraform/aws-gpu-node-pool/) | EKS GPU (NVIDIA) managed node group |
+| Deployment | [`deployment/terraform/azure-gpu-node-pool/`](deployment/terraform/azure-gpu-node-pool/) | AKS GPU (NVIDIA NC-series) node pool |
 | Cost Optimization | [`cost-optimization/aws/idle-ebs-volumes.py`](cost-optimization/aws/idle-ebs-volumes.py) | Find unattached EBS volumes |
 | Cost Optimization | [`cost-optimization/gcp/unused-disks.sh`](cost-optimization/gcp/unused-disks.sh) | Find unattached GCP disks |
 | Cost Optimization | [`cost-optimization/k8s/rightsize-requests.py`](cost-optimization/k8s/rightsize-requests.py) | Suggest K8s request adjustments |
+| Cost Optimization | [`cost-optimization/cloud-cost-baseline.py`](cost-optimization/cloud-cost-baseline.py) | Baseline spend summary from AWS or GCP billing CSV |
 | Observability | [`observability/promql/`](observability/promql/) | PromQL query snippets |
 | Observability | [`observability/grafana-dashboards/gpu-cluster.json`](observability/grafana-dashboards/gpu-cluster.json) | GPU cluster Grafana dashboard |
 | Observability | [`observability/alerts/prometheus-rules.yml`](observability/alerts/prometheus-rules.yml) | Prometheus alerting rules |
 | CLI | [`cli/repo_health/`](cli/repo_health/) | Repository health checker |
+| Advisory | [`advisory/ml-maturity-assessment.py`](advisory/ml-maturity-assessment.py) | ML platform maturity assessment |
+| Advisory | [`advisory/technical-due-diligence-checklist.md`](advisory/technical-due-diligence-checklist.md) | Technical due diligence checklist |
 
 ## Quickstart
 
