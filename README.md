@@ -1,6 +1,10 @@
 # platform-scripts
 
-Reusable deployment helpers, cost-optimization scripts, and observability snippets for ML platforms.
+Reusable deployment helpers, cost-optimization scripts, observability snippets, and advisory tools for ML platforms and the startups that run them.
+
+I built these scripts to make repetitive platform work faster and safer: cleaning up stale resources before they become expensive, right-sizing requests before an AWS bill becomes a board topic, and assessing whether a team is ready to scale before they commit to a major platform investment.
+
+**Related work:** [`ml-inference-starter`](../ml-inference-starter) for a reference serving stack, [`ml-security-checklist`](../ml-security-checklist) for security and production readiness, and [`engineering-playbook`](../engineering-playbook) for the R&D processes these scripts support.
 
 ![Lint & Test](https://github.com/gadsosa/platform-scripts/actions/workflows/lint-and-test.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
